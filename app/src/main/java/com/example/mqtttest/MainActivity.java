@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements IGetMessageCallBa
         mqttService.toCreateNotification(message);
 
         builder.append(message);
-        builder.append("|");
+        builder.append("\n");
         textView.setText(builder.toString());
 
     }
