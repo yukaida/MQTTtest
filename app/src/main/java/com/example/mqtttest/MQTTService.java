@@ -11,6 +11,7 @@ import android.net.NetworkInfo;
 import android.os.Binder;
 import android.os.IBinder;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.NotificationCompat;
 
@@ -135,6 +136,7 @@ public class MQTTService extends Service {
         @Override
         public void onSuccess(IMqttToken arg0) {
             Log.i(TAG, "连接成功 ");
+            Toast.makeText(MQTTService.this, "连接成功", Toast.LENGTH_SHORT).show();
             try {
                 // 订阅myTopic话题
                 client.subscribe(myTopic,1);
